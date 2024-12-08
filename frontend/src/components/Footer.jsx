@@ -1,22 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Footer Component
 // Represents the footer section of the application.
 
 export default function Footer() {
-  return (
-    // StyledFooter styled-component
-    <StyledFooter className="footer">
-      {/* Copyright information */}
-      <p>
-        &copy; {new Date().getFullYear()} Kwizie, All rights reserved.
-      </p>
-      {/* Designer information */}
-      <p>
-        Designed with 💝 by Sushant Pandey
-      </p>
-    </StyledFooter>
-  );
+    return (
+        // StyledFooter styled-component
+        <StyledFooter className="footer">
+            {/* Copyright information */}
+            <p>&copy; {new Date().getFullYear()} QuizzVTS, All rights reserved.</p>
+            {/* Designer information */}
+            <p>Designed with by DEV2025 VTS</p>
+        </StyledFooter>
+    );
 }
 
 // StyledFooter styled-component with CSS styles
@@ -34,14 +30,13 @@ const StyledFooter = styled.footer`
 
     // Media query for responsiveness
     @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
     // Dark mode styling
     body.dark-mode & {
-      background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.7);
     }
 `;
-

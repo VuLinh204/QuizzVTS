@@ -1,89 +1,102 @@
-// Importing necessary modules from React and ReactDOM
+// Nhập các module cần thiết từ React và ReactDOM
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
-// Importing global styles
-import './assets/globals.css';
+// Nhập các style toàn cục
+import './assets/Base.css';
+import './assets/App.css';
 
-// Importing modules from react-router-dom for routing
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-// Importing modules from react-redux for state management
+// Nhập các module từ react-router-dom để xử lý routing
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
-// Importing the Redux store
 import { store } from './store';
-
-// Importing a notification component
 import { Toaster } from 'react-hot-toast';
 
-// Importing the root component of the application
-import App from './App'; // Root Component
+// Nhập component gốc của ứng dụng
+import App from './App';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
-// Importing pages for routing
-import Home from "./pages/Home";
-import PlayQuiz from "./pages/PlayQuiz";
-import MyQuizzes from "./pages/MyQuizzes";
-import CreateQuiz from "./pages/CreateQuiz";
-import EditQuiz, { loader as editQuizLoader } from "./pages/EditQuiz";
+// Nhập các trang cho routing
+import Home from './pages/Home';
+import PlayQuiz from './pages/PlayQuiz';
+import MyQuizzes from './pages/MyQuizzes';
+import CreateQuiz from './pages/CreateQuiz';
+import EditQuiz, { loader as editQuizLoader } from './pages/EditQuiz';
 import ViewQuiz, { loader as viewQuizLoader } from './pages/ViewQuiz';
 import ErrorPage from './pages/ErrorPage';
+import LoginPage from './pages/auth/Login/index';
+import ProtectedRoute from './components/ProtectedRoute';
+import RegisterPage from './pages/auth/Register';
+import ForgotPasswordPage from './pages/auth/ForgotPassword';
 
-// Creating a router with routes and elements
+// Tạo router với các route và các component
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage message='404 | Page not found' />,
-    children: [
-      {
-        path: "/",
-        element: <Home />
-      },
-      {
-        path: "/play-quiz",
-        element: <PlayQuiz />
-      },
-      {
-        path: "/create-quiz",
-        element: <CreateQuiz />
-      },
-      {
-        path: "/my-quizzes",
-        element: <MyQuizzes />
-      },
-      {
-        path: "/view-quiz",
-        element: <ViewQuiz />,
-        errorElement: <ErrorPage message='Quiz not found' />,
-        loader: viewQuizLoader
-      },
-      {
-        path: "/edit-quiz",
-        element: <EditQuiz />,
-        errorElement: <ErrorPage message='Quiz not found' />,
-        loader: editQuizLoader
-      }
-    ]
-  },
-])
+    {
+        path: '/',
+        element: <App />,
+        errorElement: <ErrorPage message="404 | Trang không tìm thấy" />,
+        children: [
+            {
+                path: '/',
+                element: <Home />,
+            },
+            {
+                path: '/login',
+                element: <LoginPage />,
+            },
+            {
+                path: '/register',
+                element: <RegisterPage />,
+            },
+            {
+                path: '/forgot_password',
+                element: <ForgotPasswordPage />,
+            },
+            {
+                path: '/play-quiz',
+                element: <PlayQuiz />,
+            },
+            {
+                path: '/create-quiz',
+                element: <ProtectedRoute element={<CreateQuiz />} />,
+            },
+            {
+                path: '/my-quizzes',
+                element: <ProtectedRoute element={<MyQuizzes />} />,
+            },
+            {
+                path: '/view-quiz',
+                element: <ViewQuiz />,
+                errorElement: <ErrorPage message="Quiz không tìm thấy" />,
+                loader: viewQuizLoader,
+            },
+            {
+                path: '/edit-quiz',
+                element: <ProtectedRoute element={<EditQuiz />} />,
+                errorElement: <ErrorPage message="Quiz không tìm thấy" />,
+                loader: editQuizLoader,
+            },
+        ],
+    },
+]);
 
-// Creating a root element for rendering React
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Rendering the application within a Redux Provider and RouterProvider
+// Render ứng dụng trong Provider Redux và RouterProvider
 root.render(
-  <StrictMode>
-    <Provider store={store}>
-      {/* Adding a notification toaster with custom options */}
-      <Toaster toastOptions={{
-        duration: 3000,
-        style: { borderRadius: "10px", background: "#2c3030", color: "#fff" },
-      }}
-        position="top-center" />
+    <StrictMode>
+        <Provider store={store}>
+            {/* Thêm thông báo toaster với các tùy chọn tùy chỉnh */}
+            <Toaster
+                toastOptions={{
+                    duration: 3000,
+                    style: { borderRadius: '10px', background: '#2c3030', color: '#fff' },
+                }}
+                position="top-center"
+            />
 
-      {/* Providing the router for routing within the application */}
-      <RouterProvider router={router} />
-    </Provider>
-  </StrictMode>
+            {/* Cung cấp router cho việc routing trong ứng dụng */}
+            <RouterProvider router={router} />
+        </Provider>
+    </StrictMode>,
 );
