@@ -18,10 +18,16 @@ const AuthForm = ({ heading, isLogin, isForgotPassword, onSwitchMode, onSubmit }
                 {/* Form */}
                 <div className="auth-form__form">
                     <div className="auth-form__group">
+                        <label className="auth-form__label" htmlFor="email">
+                            Email
+                        </label>
                         <input type="text" className="auth-form__input" placeholder="Email" />
                     </div>
                     {isLogin && (
                         <div className="auth-form__group">
+                            <label className="auth-form__label" htmlFor="password">
+                                Mật khẩu
+                            </label>
                             <input type="password" className="auth-form__input" placeholder="Mật khẩu" />
                         </div>
                     )}
@@ -47,7 +53,7 @@ const AuthForm = ({ heading, isLogin, isForgotPassword, onSwitchMode, onSubmit }
                     <button className="btn btn--normal auth-form__controls-back" onClick={() => window.history.back()}>
                         TRỞ LẠI
                     </button>
-                    <button className="btn btn--primary" onClick={onSubmit}>
+                    <button className="btn btn--secondary" onClick={onSubmit}>
                         {isForgotPassword ? 'GỬI YÊU CẦU' : isLogin ? 'ĐĂNG NHẬP' : 'ĐĂNG KÝ'}
                     </button>
                 </div>
@@ -58,7 +64,7 @@ const AuthForm = ({ heading, isLogin, isForgotPassword, onSwitchMode, onSubmit }
                 <div className="auth-form__socials">
                     <a href="/auth/facebook" className="auth-form__socials--facebook btn btn--size-s btn--with-icon">
                         <i className="auth-form__socials-icon fa-brands fa-square-facebook"></i>
-                        <span className="auth-form__socials-title">Kết nối với FaceBook</span>
+                        <span className="auth-form__socials-title">Kết nối với Facebook</span>
                     </a>
                     <a href="/auth/google" className="auth-form__socials--google btn btn--size-s btn--with-icon">
                         <i className="auth-form__socials-icon fa-brands fa-google"></i>

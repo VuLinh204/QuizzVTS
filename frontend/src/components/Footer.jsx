@@ -9,7 +9,6 @@ export default function Footer() {
         <StyledFooter className="footer">
             {/* Copyright information */}
             <p>&copy; {new Date().getFullYear()} QuizzVTS, All rights reserved.</p>
-            {/* Designer information */}
             <p>Designed with by DEV2025 VTS</p>
         </StyledFooter>
     );
@@ -17,12 +16,11 @@ export default function Footer() {
 
 // StyledFooter styled-component with CSS styles
 const StyledFooter = styled.footer`
-    background-color: rgba(38, 42, 69, 0.7);
+    background-color: #0a092d;
     padding: 1.5rem 1.5rem;
     color: white;
     z-index: 1000;
     margin-top: 1rem;
-    border-top: 1px solid rgb(59, 59, 59);
     width: 100vw;
     display: flex;
     justify-content: space-between;

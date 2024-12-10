@@ -79,12 +79,16 @@ export default function Header() {
 
     return (
         <header className="header">
+            <div className="menu__bar-icon">
+                <i className="fa fa-bars"></i>
+            </div>
+
             <Link
                 to={isPlayQuizPage && !isQuizDataEmpty ? '#' : '/'}
                 className="logo"
                 onClick={closeMenuWhenLinkOpened}
             >
-                QuizzVTS
+                Q
             </Link>
 
             {isPlayQuizPage && !isQuizDataEmpty ? (
@@ -97,14 +101,6 @@ export default function Header() {
                 <nav className="nav">
                     <div className="buttons" style={{ display: 'flex' }}>
                         <ThemeToggleSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
-                        <button className={`menu-btn ${menuOpen ? 'active' : ''}`} onClick={handleMenuToggle}>
-                            {menuOpen ? (
-                                <HighlightOffRoundedIcon className="menu-icon" />
-                            ) : (
-                                <MenuOpenRoundedIcon className="menu-icon" />
-                            )}
-                        </button>
                     </div>
 
                     <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>

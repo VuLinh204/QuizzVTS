@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 
 :root {
-    --primary-color: #205992;
-    --secondary-color: #82e0ff;
+    --primary-color: #0a092d;
+    --secondary-color: #205992;
+    --tertiary-color: rgb(56 189 248);
     --success-color: #28a745;
     --success-hover-color: #43f96d;
     --white-color: #fff;
     --black-color: #000;
-    --text-color: #333;
+    --text-color: #ccc;
     --border-color: #dbdbdb;
     --star-gold-color: #ffce3e;
     --bg-dark: rgb(30 30 30);
     --text-white: #fff;
     --bg-light: rgb(145, 145, 145);
+    /* --bg-link: ; */
+    --bg-card-item: #2e3856;
 
     --header-height: 120px;
     --navbar-height: 34px;
@@ -21,7 +24,7 @@
 
 body {
     user-select: none;
-    background: var(--bg-light);
+    background: var(--primary-color);
     color: black;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -56,6 +59,7 @@ html {
 }
 
 .main-container {
+    margin-left: 60px;
     min-height: calc(100vh - 4rem);
     display: grid;
     place-items: center;
@@ -296,18 +300,19 @@ li {
     text-decoration: none;
     border: none;
     border-radius: 2px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 8px 12px;
     outline: none;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--white-color);
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
 .btn.btn--normal {
-    background-color: #fff;
+    background-color: var(--white-color);
+    color: var(--text-color);
 }
 
 .btn.btn--normal:hover {
@@ -324,10 +329,18 @@ li {
     color: var(--white-color);
     background-color: var(--primary-color);
 }
-
 .btn.btn--primary:hover {
     color: var(--white-color);
     background-color: var(--secondary-color);
+}
+
+.btn.btn--secondary {
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+}
+.btn.btn--secondary:hover {
+    color: var(--white-color);
+    background-color: var(--tertiary-color);
 }
 
 .btn.btn--success {

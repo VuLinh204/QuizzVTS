@@ -1,0 +1,64 @@
+/* Flashcard.module.css */
+.card {
+    cursor: pointer;
+    background-color: var(--bg-card-item);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card_title {
+    font-size: 1.1rem;
+    color: var(--white-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.author_stats {
+    display: flex;
+    align-items: center;
+}
+
+.author_image {
+    background-color: #ccc;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.author_name {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.author_lectures,
+.author_classes {
+    background-color: #586380;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    margin: 10px 10px 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.author_lectures:hover,
+.author_classes:hover {
+    background-color: #17b4a6;
+}
