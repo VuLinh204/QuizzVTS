@@ -4,15 +4,22 @@ import { Outlet } from 'react-router-dom';
 
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
+import { useState } from 'react';
 
 export default function App() {
+    const [isMenuClicked, setIsMenuClicked] = useState(false);
+
+    const handleMenuClick = () => {
+        setIsMenuClicked((prevState) => !prevState);
+    };
+
     return (
         <>
             <Header />
-            <Sidebar />
-            <main className="main-container">
+            <Sidebar onMenuClick={handleMenuClick} />
+            <div className={`main-container ${isMenuClicked ? 'menu-clicked' : ''}`}>
                 <Outlet />
-            </main>
+            </div>
 
             <Footer />
         </>

@@ -14,7 +14,6 @@
     --bg-dark: rgb(30 30 30);
     --text-white: #fff;
     --bg-light: rgb(145, 145, 145);
-    /* --bg-link: ; */
     --bg-card-item: #2e3856;
 
     --header-height: 120px;
@@ -24,7 +23,6 @@
 
 body {
     user-select: none;
-    background: var(--primary-color);
     color: black;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -59,11 +57,28 @@ html {
 }
 
 .main-container {
-    margin-left: 60px;
+    background: var(--primary-color);
+    margin-left: 80px;
     min-height: calc(100vh - 4rem);
     display: grid;
     place-items: center;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0;
+    transition: margin-left 0.3s ease;
+}
+
+.main-container.menu-clicked {
+    margin-left: 220px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-container.menu-clicked .Flashcards_flashcards__bNZw9 {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    transition: all 0.3s ease-in;
+}
+
+.main-container.menu-clicked .Authors_authors__dKEgF {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    transition: all 0.3s ease-in;
 }
 
 a {

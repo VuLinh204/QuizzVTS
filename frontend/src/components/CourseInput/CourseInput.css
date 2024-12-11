@@ -1,0 +1,138 @@
+/* CourseInput.css */
+
+.input-format-container {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: calc(100% - 100px);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+    font-size: 24px;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: var(--white-color);
+    margin-bottom: 20px;
+}
+
+.input-textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    background-color: #2e3856;
+    color: var(--white-color);
+    margin-top: 20px;
+    resize: none;
+}
+
+.separator-options {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.separator-group {
+    width: 48%;
+}
+
+.separator-group h5 {
+    font-size: 18px;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.separator-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--white-color);
+}
+
+.custom-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    background-color: #2e3856;
+    color: var(--white-color);
+}
+
+.preview-section {
+    margin: 20px 0;
+}
+
+.preview-section h6 {
+    font-size: 18px;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.preview-item span {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.preview-item input {
+    width: calc(50% - 20px);
+    padding: 8px;
+    font-size: 14px;
+    background-color: #2e3856;
+    color: var(--white-color);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.cancel-button,
+.submit-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--white-color);
+}
+
+.cancel-button {
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 2px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    opacity: 0.8;
+}
+
+.submit-button {
+    background-color: var(--secondary-color);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}

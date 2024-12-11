@@ -30,7 +30,7 @@ const Flashcards = () => {
     ];
 
     return (
-        <div className={styles.container}>
+        <div className="container">
             <h1 className={styles.title}>Bộ thẻ ghi nhớ phổ biến</h1>
             <div className={styles.flashcards}>
                 {flashcardsData.map((flashcard, index) => (

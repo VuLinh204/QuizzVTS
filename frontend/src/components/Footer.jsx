@@ -20,7 +20,6 @@ const StyledFooter = styled.footer`
     padding: 1.5rem 1.5rem;
     color: white;
     z-index: 1000;
-    margin-top: 1rem;
     width: 100vw;
     display: flex;
     justify-content: space-between;

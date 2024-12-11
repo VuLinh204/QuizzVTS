@@ -7,8 +7,20 @@ const Author = ({ authorImage, authorName, lectures, classes }) => {
             <img src={authorImage} alt={`${authorName} avatar`} className={styles.author_image} />
             <h3 className={styles.author_name}>{authorName}</h3>
             <div className={styles.author_stats}>
-                <button className={styles.author_lectures}>{lectures} bài giảng</button>
-                <button className={styles.author_classes}>{classes} lớp học</button>
+                <button className={styles.author_lectures}>
+                    <i class="fa-solid fa-book"></i>
+                    <span className={styles.author_stats}>
+                        {lectures}
+                        <p>bài giảng</p>
+                    </span>
+                </button>
+                <button className={styles.author_classes}>
+                    <i className="fa-solid fa-users"></i>{' '}
+                    <span className={styles.author_stats}>
+                        {classes}
+                        <p>lớp học</p>
+                    </span>
+                </button>
             </div>
         </div>
     );
