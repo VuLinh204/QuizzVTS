@@ -16,6 +16,7 @@ import RegisterPage from './pages/auth/Register';
 import ForgotPasswordPage from './pages/auth/ForgotPassword';
 import CourseInput from './components/CourseInput';
 import CourseUnit from './components/CourseUnit';
+import Library from './components/Librarys';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -38,6 +39,7 @@ root.render(
                     <Route index element={<Home />} />
                     <Route path="course-input" element={<CourseInput />} />
                     <Route path="course-unit" element={<CourseUnit />} />
+                    <Route path="library" element={<Library />} />
                 </Route>
 
                 <Route path="*" element={<ErrorPage message="404 | Trang không tìm thấy" />} />

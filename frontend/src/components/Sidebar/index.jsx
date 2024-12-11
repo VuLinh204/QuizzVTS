@@ -32,7 +32,7 @@ const Sidebar = ({ onMenuClick }) => {
                 <Link
                     className={`sidebar__item ${activeItem === 'library' ? 'active' : ''}`}
                     onClick={() => handleItemClick('library')}
-                    to="/"
+                    to="/library"
                 >
                     <i className="fa-solid fa-folder"></i>
                     <span className="sidebar__text">Thư viện</span>
