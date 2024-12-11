@@ -12,28 +12,41 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h4 {
+.input-format-container h4 {
     font-size: 24px;
     color: var(--white-color);
     margin-bottom: 10px;
 }
 
-p {
+.input-format-container p {
     font-size: 16px;
     color: var(--white-color);
-    margin-bottom: 20px;
 }
 
 .input-textarea {
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
     background-color: #2e3856;
     color: var(--white-color);
-    margin-top: 20px;
-    resize: none;
+    display: block;
+    height: 12.5rem;
+    margin-top: 0.5rem;
+    outline: none;
+    padding: 1rem;
+    padding-left: 30px;
+    transition: all 0.12s;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+    line-height: 1.5;
+}
+
+.input-textarea::placeholder {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .separator-options {
@@ -53,10 +66,17 @@ p {
 }
 
 .separator-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    line-height: 30px;
+    font-size: 16px;
     color: var(--white-color);
+}
+
+.separator-group label p {
+    margin-left: 10px;
 }
 
 .custom-input {
@@ -66,6 +86,7 @@ p {
     font-size: 14px;
     background-color: #2e3856;
     color: var(--white-color);
+    margin-left: 10px;
 }
 
 .preview-section {

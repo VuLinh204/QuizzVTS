@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthForm from '../../../components/auth/AuthForm';
+import AuthForm from '../../../components/AuthForm';
 
 const LoginPage = () => {
     const handleLogin = (event) => {
@@ -27,6 +27,7 @@ const LoginPage = () => {
             fields={fields}
             controls={controls}
             isLogin={true}
+            onSubmit={handleLogin}
             onSwitchMode={() => (window.location.href = '/register')}
         />
     );

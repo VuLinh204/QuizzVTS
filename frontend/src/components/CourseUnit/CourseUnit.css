@@ -11,18 +11,18 @@
     box-sizing: border-box;
 }
 
-.header {
+.course-unit-container .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header h2 {
+.course-unit-container .header h2 {
     margin: 0;
     font-size: 28px;
 }
 
-.header-actions {
+.course-unit-container .header-actions {
     display: flex;
 }
 

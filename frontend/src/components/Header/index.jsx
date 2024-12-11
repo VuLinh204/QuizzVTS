@@ -1,15 +1,23 @@
 // Importing styles and required components
 import './headerStyles.css';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded';
-import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import ThemeToggleSwitch from './ThemeToggleSwitch';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 // Header Component
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            navigate(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
+            setSearchQuery('');
+            closeMenuWhenLinkOpened();
+        }
+    };
 
     const getInitialDarkMode = () => {
         const storedDarkMode = localStorage.getItem('darkMode');
@@ -53,6 +61,18 @@ export default function Header() {
             </Link>
 
             <nav className="nav">
+                <form className="search-form" onSubmit={handleSearchSubmit}>
+                    <input
+                        type="text"
+                        className="search-input"
+                        placeholder="Tìm thẻ ghi nhớ..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    <button type="submit" className="search-button">
+                        <i className="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
                 <div className="buttons" style={{ display: 'flex' }}>
                     <ThemeToggleSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                 </div>

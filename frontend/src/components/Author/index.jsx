@@ -8,7 +8,7 @@ const Author = ({ authorImage, authorName, lectures, classes }) => {
             <h3 className={styles.author_name}>{authorName}</h3>
             <div className={styles.author_stats}>
                 <button className={styles.author_lectures}>
-                    <i class="fa-solid fa-book"></i>
+                    <i className="fa-solid fa-book"></i>
                     <span className={styles.author_stats}>
                         {lectures}
                         <p>bài giảng</p>

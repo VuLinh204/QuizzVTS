@@ -66,7 +66,7 @@ const CourseUnit = () => {
                         </div>
 
                         <button className="add-image-button">
-                            <i class="fa-solid fa-image"></i>Hình ảnh
+                            <i className="fa-solid fa-image"></i>Hình ảnh
                         </button>
                     </div>
                 ))}
