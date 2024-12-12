@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Flashcards.module.css';
-import Flashcard from '../Flashcard';
+import styles from './StudentCards.module.css';
+import StudentCard from '../StudentCard';
 
-const Flashcards = () => {
-    const flashcardsData = [
+const StudentCards = () => {
+    const StudentCardsData = [
         {
             title: 'SMARTER TGAT1_2024_VOCAB',
             subtitle: '896 thuật ngữ',
             authorName: 'GATENGCOOLCOOLI',
             authorImage: '/path/to/gatengcoolcooli.png',
-            buttonLabel: 'Giáo viên',
             link: '/course-detail/tgat1-2024-vocab',
         },
         {
@@ -18,7 +17,6 @@ const Flashcards = () => {
             subtitle: '15 thuật ngữ',
             authorName: 'quizlette727480',
             authorImage: '/path/to/quizlette727480.png',
-            buttonLabel: 'Giáo viên',
             link: '/course-detail/matematica',
         },
         {
@@ -26,23 +24,21 @@ const Flashcards = () => {
             subtitle: '27 thuật ngữ',
             authorName: 'MsOlsonMTA',
             authorImage: '/path/to/msolsonmta.png',
-            buttonLabel: 'Giáo viên',
             link: '/course-detail/27-amendments',
         },
     ];
 
     return (
         <div className="container">
-            <h1 className={styles.title}>Bộ thẻ ghi nhớ phổ biến</h1>
-            <div className={styles.flashcards}>
-                {flashcardsData.map((flashcard, index) => (
-                    <Link to={flashcard.link} key={index} className={styles.flashcardLink}>
-                        <Flashcard
-                            title={flashcard.title}
-                            subtitle={flashcard.subtitle}
-                            authorName={flashcard.authorName}
-                            authorImage={flashcard.authorImage}
-                            buttonLabel={flashcard.buttonLabel}
+            <h1 className={styles.title}>Học sinh cũng đã học</h1>
+            <div className={styles.studentCards}>
+                {StudentCardsData.map((studentCard, index) => (
+                    <Link to={studentCard.link} key={index} className={styles.studentCardLink}>
+                        <StudentCard
+                            title={studentCard.title}
+                            subtitle={studentCard.subtitle}
+                            authorName={studentCard.authorName}
+                            authorImage={studentCard.authorImage}
                         />
                     </Link>
                 ))}
@@ -51,4 +47,4 @@ const Flashcards = () => {
     );
 };
 
-export default Flashcards;
+export default StudentCards;

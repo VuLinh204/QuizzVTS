@@ -1,0 +1,74 @@
+.card {
+    cursor: pointer;
+    background-color: var(--bg-card-item);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    width: 320px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card_title {
+    font-size: 1.1rem;
+    color: var(--white-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card_subtitle {
+    font-size: 0.7rem;
+    color: var(--white-color);
+    font-weight: bold;
+    margin-bottom: 30px;
+    background-color: #586380;
+    border-radius: 20px;
+    text-align: center;
+    width: 40%;
+    max-width: 250px;
+}
+
+.card_author {
+    display: flex;
+    align-items: center;
+}
+
+.card_author_image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.card_author_name {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.card_button {
+    background-color: var(--bg-card-item);
+    color: white;
+    max-width: 80px;
+    border: 2px solid #586380;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    padding: 8px;
+    margin-left: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card_button:hover {
+    background-color: #17b4a6;
+}
