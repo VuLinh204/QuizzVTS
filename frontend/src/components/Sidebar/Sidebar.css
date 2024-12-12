@@ -98,9 +98,10 @@
 /* Menubar */
 .menu__bar-icon {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 1.4rem;
+    top: 24px;
+    left: 40px;
+    z-index: 1001;
+    font-size: 1.6rem;
     color: var(--white-color);
     cursor: pointer;
 }

@@ -18,7 +18,7 @@ const Sidebar = ({ onMenuClick }) => {
     return (
         <div className={`sidebar ${isExpanded ? 'sidebar--expanded' : ''}`} id="sidebar">
             <div className=" menu-toggle menu__bar-icon" onClick={toggleSidebar}>
-                <i className="fa fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
             </div>
             <ul className="sidebar__menu">
                 <Link
