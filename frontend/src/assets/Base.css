@@ -67,7 +67,7 @@ html {
 }
 
 .main-container.menu-clicked {
-    margin-left: 220px;
+    margin-left: 240px;
     transition: margin-left 0.3s ease;
 }
 

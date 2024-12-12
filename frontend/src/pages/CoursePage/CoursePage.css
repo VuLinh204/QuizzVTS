@@ -9,6 +9,19 @@
     max-width: 800px;
 }
 
+.coursePage-container .title {
+    color: var(--white-color);
+}
+
+.coursePage-container .rate {
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.coursePage-container .rate i {
+    margin-right: 10px;
+}
+
 /* Vocabulary-card */
 .coursePage-container .vocabulary-card {
     background-color: var(--bg-card-item);
