@@ -1,0 +1,19 @@
+.wrapper {
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 170px;
+    padding: 16px 24px;
+    border-radius: .5rem;
+    background-color: transparent;
+    color: var(--white-color);
+    border: .125rem solid #586380;
+    cursor: pointer;
+}
+
+.wrapper:hover {
+    background-color: #282e3e;
+}
+
+.icon {
+    margin-right: 16px;
+}

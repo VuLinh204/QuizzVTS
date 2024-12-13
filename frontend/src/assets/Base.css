@@ -60,7 +60,6 @@ html {
     background: var(--primary-color);
     margin-left: 80px;
     min-height: calc(100vh - 4rem);
-    display: grid;
     place-items: center;
     padding: 1rem 0;
     transition: margin-left 0.3s ease;
@@ -154,6 +153,7 @@ li {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -163,6 +163,7 @@ li {
     from {
         transform: scale(var(--growth-from));
     }
+
     to {
         transform: scale(var(--growth-to));
     }
@@ -181,6 +182,7 @@ li {
     background-size: cover;
     background-position: center;
 }
+
 .area {
     display: flex;
     animation: fadeIn linear 0.1s;
@@ -344,6 +346,7 @@ li {
     color: var(--white-color);
     background-color: var(--primary-color);
 }
+
 .btn.btn--primary:hover {
     color: var(--white-color);
     background-color: var(--secondary-color);
@@ -353,6 +356,7 @@ li {
     color: var(--white-color);
     background-color: var(--secondary-color);
 }
+
 .btn.btn--secondary:hover {
     color: var(--white-color);
     background-color: var(--tertiary-color);

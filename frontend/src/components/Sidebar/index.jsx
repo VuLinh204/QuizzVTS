@@ -57,7 +57,7 @@ const Sidebar = ({ onMenuClick }) => {
                 <Link
                     className={`sidebar__item ${activeItem === 'advice' ? 'active' : ''}`}
                     onClick={() => handleItemClick('advice')}
-                    to="/"
+                    to="/explanations"
                 >
                     <i className="fa-solid fa-book"></i>
                     <span className="sidebar__text">Lời khuyên</span>
