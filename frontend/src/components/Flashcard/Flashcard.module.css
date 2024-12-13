@@ -52,6 +52,7 @@
 .card_author_name {
     font-size: 1rem;
     color: var(--text-color);
+    margin: 0;
 }
 
 .card_button {

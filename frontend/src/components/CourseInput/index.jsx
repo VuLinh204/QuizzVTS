@@ -1,10 +1,15 @@
 // Courseunits.js
-import React from 'react';
+import React, { useState } from 'react';
 import './CourseInput.css';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const CourseInput = () => {
     const navigate = useNavigate();
+    const [terms, setTerms] = useState([1]);
+
+    const handleAddTerm = () => {
+        setTerms([...terms, terms.length + 1]);
+    };
 
     const handleCancel = () => {
         navigate(-1);
@@ -17,17 +22,21 @@ const CourseInput = () => {
             <textarea
                 className="input-textarea"
                 rows="6"
-                placeholder="Từ 1 Định nghĩa 1\nTừ 2 Định nghĩa 2\nTừ 3 Định nghĩa 3"
+                placeholder="Từ 1 Định nghĩa 1
+Từ 2 Định nghĩa 2
+Từ 3 Định nghĩa 3"
             ></textarea>
 
             <div className="separator-options">
                 <div className="separator-group">
                     <h5>Giữa thuật ngữ và định nghĩa</h5>
                     <label>
-                        <input type="radio" name="separator" defaultChecked /> Tab
+                        <input type="radio" name="separator" defaultChecked />
+                        <p>Tab</p>
                     </label>
                     <label>
-                        <input type="radio" name="separator" /> Phẩy
+                        <input type="radio" name="separator" />
+                        <p>Phẩy</p>
                     </label>
                     <label>
                         <input type="radio" name="separator" />
@@ -37,10 +46,12 @@ const CourseInput = () => {
                 <div className="separator-group">
                     <h5>Giữa các thẻ</h5>
                     <label>
-                        <input type="radio" name="tag-separator" defaultChecked /> Dòng mới
+                        <input type="radio" name="tag-separator" defaultChecked />
+                        <p>Dòng mới</p>
                     </label>
                     <label>
-                        <input type="radio" name="tag-separator" /> Chấm phẩy
+                        <input type="radio" name="tag-separator" />
+                        <p> Chấm phẩy</p>
                     </label>
                     <label>
                         <input type="radio" name="tag-separator" />
@@ -49,20 +60,25 @@ const CourseInput = () => {
                 </div>
             </div>
 
-            <div className="preview-section">
-                <h6>Xem trước</h6>
-                <div className="preview-items">
-                    {['Run - Chạy', 'Talk - Nói'].map((item, index) => {
-                        const [term, definition] = item.split(' - ');
-                        return (
-                            <div className="preview-item" key={index}>
-                                <span>{index + 1}</span>
-                                <input type="text" value={term} readOnly />
-                                <input type="text" value={definition} readOnly />
-                            </div>
-                        );
-                    })}
-                </div>
+            <div className="terms-section">
+                {terms.map((index) => (
+                    <div className="term-item" key={index}>
+                        <span>{index}</span>
+
+                        <div className="definition">
+                            <input type="text" className="term-input" disabled />
+                            <label htmlFor="term" className="term-label">
+                                Thuật ngữ
+                            </label>
+                        </div>
+                        <div className="definition">
+                            <input type="text" className="definition-input" disabled />
+                            <label htmlFor="definition" className="definition-label">
+                                Định nghĩa
+                            </label>
+                        </div>
+                    </div>
+                ))}
             </div>
 
             <div className="actions">

@@ -1,4 +1,3 @@
-/* Flashcard.module.css */
 .card {
     cursor: pointer;
     background-color: var(--bg-card-item);
@@ -6,6 +5,8 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding: 20px;
+    width: 320px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,51 +25,50 @@
     margin-bottom: 10px;
 }
 
-.author_stats {
+.card_subtitle {
+    font-size: 0.7rem;
+    color: var(--white-color);
+    font-weight: bold;
+    margin-bottom: 30px;
+    background-color: #586380;
+    border-radius: 20px;
+    text-align: center;
+    width: 40%;
+    max-width: 250px;
+}
+
+.card_author {
     display: flex;
     align-items: center;
 }
 
-.author_image {
-    background-color: #ccc;
-    width: 70px;
-    height: 70px;
+.card_author_image {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
 }
 
-.author_name {
-    margin-top: 20px;
-    font-size: 1.2rem;
+.card_author_name {
+    font-size: 1rem;
     color: var(--text-color);
+    margin: 0;
 }
 
-.author_lectures,
-.author_classes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #586380;
+.card_button {
+    background-color: var(--bg-card-item);
     color: white;
-    border: none;
+    max-width: 80px;
+    border: 2px solid #586380;
     border-radius: 20px;
     font-size: 0.8rem;
-    padding: 2px 14px;
-    margin: 10px 10px 10px 0;
+    padding: 8px;
+    margin-left: 40px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.author_lectures:hover,
-.author_classes:hover {
+.card_button:hover {
     background-color: #17b4a6;
-}
-
-.author_stats {
-    padding-left: 6px;
-}
-
-.author_stats p {
-    padding-left: 2px;
 }

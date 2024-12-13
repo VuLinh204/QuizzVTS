@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './AuthForm.css';
 
-const AuthForm = ({ heading, isLogin, isForgotPassword, onSwitchMode, onSubmit }) => {
+const AuthForm = ({ heading, isLogin = true, isForgotPassword = false, onSwitchMode, onSubmit }) => {
     return (
         <div className="auth-form">
             <div className="auth-form__container">
-                {/* Header */}
                 <div className="auth-form__header">
                     <h3 className="auth-form__heading">{heading}</h3>
                     {!isForgotPassword && (
@@ -84,11 +84,6 @@ AuthForm.propTypes = {
     isForgotPassword: PropTypes.bool,
     onSwitchMode: PropTypes.func,
     onSubmit: PropTypes.func.isRequired,
-};
-
-AuthForm.defaultProps = {
-    isLogin: true,
-    isForgotPassword: false,
 };
 
 export default AuthForm;

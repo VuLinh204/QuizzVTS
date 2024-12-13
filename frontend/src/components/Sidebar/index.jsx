@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
+import Notifications from '../Notifications';
 
 const Sidebar = ({ onMenuClick }) => {
     const [activeItem, setActiveItem] = useState('home');
     const [isExpanded, setIsExpanded] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     const handleItemClick = (item) => {
         setActiveItem(item);
@@ -15,10 +17,14 @@ const Sidebar = ({ onMenuClick }) => {
         onMenuClick();
     };
 
+    const toggleNotifications = () => {
+        setShowNotifications(!showNotifications);
+    };
+
     return (
         <div className={`sidebar ${isExpanded ? 'sidebar--expanded' : ''}`} id="sidebar">
             <div className=" menu-toggle menu__bar-icon" onClick={toggleSidebar}>
-                <i className="fa fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
             </div>
             <ul className="sidebar__menu">
                 <Link
@@ -32,19 +38,16 @@ const Sidebar = ({ onMenuClick }) => {
                 <Link
                     className={`sidebar__item ${activeItem === 'library' ? 'active' : ''}`}
                     onClick={() => handleItemClick('library')}
-                    to="/"
+                    to="/library"
                 >
                     <i className="fa-solid fa-folder"></i>
                     <span className="sidebar__text">Thư viện</span>
                 </Link>
-                <Link
-                    className={`sidebar__item ${activeItem === 'notifications' ? 'active' : ''}`}
-                    onClick={() => handleItemClick('notifications')}
-                    to="/"
-                >
+                <div className={`sidebar__item ${showNotifications ? 'active' : ''}`} onClick={toggleNotifications}>
                     <i className="fa-solid fa-bell"></i>
                     <span className="sidebar__text">Thông báo</span>
-                </Link>
+                </div>
+                {showNotifications && <Notifications isSidebarExpanded={isExpanded} />}
                 <hr className="sidebar__divider" />
                 <Link
                     className={`sidebar__item ${activeItem === 'notes' ? 'active' : ''}`}

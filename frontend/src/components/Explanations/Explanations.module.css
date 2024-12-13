@@ -61,6 +61,7 @@
     outline: none;
     background-color: initial;
     color: var(--white-color);
+    margin-left: 10px;
 }
 
 .input-search:placeholder-shown {
