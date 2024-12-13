@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 
 const WordList = () => {
     const words = [
-        { id: 1, word: 'abuse', definition: '(N) การใช้ในทางที่ผิด' },
+        { id: 1, word: 'abuse', definition: '(N) การใช้ในทางที่ผิด', image: 'abc.jpg' },
         { id: 2, word: 'comfort', definition: '(N) ความสบาย/ผ่อนคลาย' },
         { id: 3, word: 'lesson', definition: '(N) บทเรียน' },
     ];
 
     const [showDefinition, setShowDefinition] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedMode, setSelectedMode] = useState('Chọn chế độ học');
+
+    const handleModeChange = (mode) => {
+        setSelectedMode(mode);
+        setIsDropdownOpen(false);
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
 
     const toggleDefinition = () => {
         setShowDefinition(!showDefinition);
-    };
-
-    const handleModeChange = (event) => {
-        setSelectedMode(event.target.value);
     };
 
     return (
@@ -27,11 +33,17 @@ const WordList = () => {
                         <div className="word-index">{item.id}</div>
                         <div className="word-details">
                             <span className="word-name">{item.word}</span>
+                            <hr className="custom-hr" />
                             <span className="word-definition">{item.definition}</span>
                         </div>
+                        {item.image ? <img src={item.image} alt={item.word} className="word-image" /> : null}
                         <div className="word-actions">
-                            <button className="action-btn favorite-btn">★</button>
-                            <button className="action-btn audio-btn">🔊</button>
+                            <button className="action-btn favorite-btn">
+                                <i className="fas fa-star"></i>
+                            </button>
+                            <button className="action-btn audio-btn">
+                                <i className="fas fa-volume-up"></i>
+                            </button>
                         </div>
                     </div>
                 ))}
@@ -47,14 +59,27 @@ const WordList = () => {
                     )} */}
                 </div>
                 <div className="special-mode">
-                    <div id="mode-select" value={selectedMode} onChange={handleModeChange} className="mode-select">
-                        <select>
-                            <option value="Chọn chế độ học">Chọn chế độ học</option>
-                            <option value="Thẻ ghi nhớ">Thẻ ghi nhớ</option>
-                            <option value="Học">Học</option>
-                            <option value="Kiểm tra">Kiểm tra</option>
-                            <option value="Ghép thẻ">Ghép thẻ</option>
-                        </select>
+                    <div className="mode-select" onClick={toggleDropdown}>
+                        <div className="selected-mode">
+                            {selectedMode}{' '}
+                            <i className={`fas ${isDropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`} />
+                        </div>
+                        {isDropdownOpen && (
+                            <div className="mode-options">
+                                <div className="mode-option" onClick={() => handleModeChange('Thẻ ghi nhớ')}>
+                                    <i className="fas fa-tags"></i> Thẻ ghi nhớ
+                                </div>
+                                <div className="mode-option" onClick={() => handleModeChange('Học')}>
+                                    <i className="fas fa-book-open"></i> Học
+                                </div>
+                                <div className="mode-option" onClick={() => handleModeChange('Kiểm tra')}>
+                                    <i className="fas fa-check-circle"></i> Kiểm tra
+                                </div>
+                                <div className="mode-option" onClick={() => handleModeChange('Ghép thẻ')}>
+                                    <i className="fas fa-puzzle-piece"></i> Ghép thẻ
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const CoursePage = () => {
         <div className="coursePage-container">
             <h1 className="title">Other branches สาขาอื่นๆ</h1>
             <div className="rate">
-                <i class="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
                 5.0 (1 đánh giá)
             </div>
             <Navigation />

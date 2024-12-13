@@ -62,7 +62,7 @@ html {
     min-height: calc(100vh - 4rem);
     display: grid;
     place-items: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
     transition: margin-left 0.3s ease;
 }
 
