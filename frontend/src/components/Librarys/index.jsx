@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import MainContent from './MainContent';
 import './Library.css';
 
 const Library = () => {
@@ -48,42 +48,9 @@ const Library = () => {
               </div>
             </div>
           </div>
-
+          
           {/* Main Content */}
-          <div className="DashboardPage-primaryContents">
-            <div className="DashboardPage-main">
-              <div className="UIContainer">
-                <div className="ProfilePage-content">
-                  <div className="ProfileClassesPage">
-                    <div className="UIDiv ClassesFeed">
-                      <div className="empty-state">
-                        <img
-                          alt="Không tìm thấy lớp học nào trong thư viện"
-                          src="https://assets.quizlet.com/_next/static/media/classes_empty.7bc6c171.svg"
-                        />
-                        <div className="title">
-                          Bạn chưa tạo hoặc tham gia lớp học nào
-                        </div>
-                        <div className="description">
-                          Tạo một lớp học để giúp bạn sắp xếp học phần của mình và
-                          chia sẻ chúng với học sinh
-                        </div>
-                        <div className="button-container">
-                          <button
-                            type="button"
-                            aria-label="Tạo lớp học"
-                            className="AssemblyButtonBase"
-                          >
-                            <span>Tạo lớp học</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <MainContent activeTab={activeTab} />
         </div>
       </section>
     </div>
