@@ -57,23 +57,26 @@ const AuthForm = ({ heading, isLogin = true, isForgotPassword = false, onSwitchM
                         {isForgotPassword ? 'GỬI YÊU CẦU' : isLogin ? 'ĐĂNG NHẬP' : 'ĐĂNG KÝ'}
                     </button>
                 </div>
-            </div>
 
-            {/* Social Logins */}
-            {!isForgotPassword && (
-                <div className="auth-form__socials">
-                    <a href="/auth/facebook" className="auth-form__socials--facebook btn btn--size-s btn--with-icon">
-                        <i className="auth-form__socials-icon fa-brands fa-square-facebook"></i>
-                        <span className="auth-form__socials-title">Kết nối với Facebook</span>
-                    </a>
-                    <a href="/auth/google" className="auth-form__socials--google btn btn--size-s btn--with-icon">
-                        <i className="auth-form__socials-icon fa-brands fa-google"></i>
-                        <span className="auth-form__socials-title auth-form__socials-title--google">
-                            Kết nối với Google
-                        </span>
-                    </a>
-                </div>
-            )}
+                {/* Social Logins */}
+                {!isForgotPassword && (
+                    <div className="auth-form__socials">
+                        <a
+                            href="/auth/facebook"
+                            className="auth-form__socials--facebook btn btn--size-s btn--with-icon"
+                        >
+                            <i className="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                            <span className="auth-form__socials-title">Kết nối với Facebook</span>
+                        </a>
+                        <a href="/auth/google" className="auth-form__socials--google btn btn--size-s btn--with-icon">
+                            <i className="auth-form__socials-icon fa-brands fa-google"></i>
+                            <span className="auth-form__socials-title auth-form__socials-title--google">
+                                Kết nối với Google
+                            </span>
+                        </a>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

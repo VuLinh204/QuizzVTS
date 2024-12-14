@@ -1,5 +1,8 @@
 .auth-form {
-    left: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: calc(50% - 250px);
+    margin-top: calc(50vh - 220px);
     width: 500px;
     border-radius: 10px;
     overflow: hidden;
@@ -7,6 +10,7 @@
     box-shadow: 0 0 25px #333;
 }
 .auth-form__container {
+    width: 100%;
     padding: 10px 32px;
 }
 .auth-form__header {
@@ -19,7 +23,7 @@
 .auth-form__heading {
     font-size: 1.4rem;
     font-weight: 400px;
-    color: var(--text-color);
+    color: var(--black-color);
 }
 
 .auth-form__switch-btn {
@@ -41,10 +45,15 @@
     border-radius: 2px;
     border: 3px solid var(--border-color);
     outline: none;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--white-color);
 }
 
-.auth-form__input::focus {
+.auth-form__input::placeholder {
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+.auth-form__input:focus {
     border-color: #888;
 }
 
@@ -119,7 +128,7 @@
 }
 
 .auth-form__socials--google {
-    color: var(--text-color) !important;
+    color: var(--black-color) !important;
     margin-right: 10px;
     background-color: var(--white-color);
 }
