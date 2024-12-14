@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { useNavigate } from 'react-router-dom';
 import CourseUnitPreview from './CourseUnitPreview';
-import './CourseUnitContent.css';
+import '../css/CourseUnitContent.css';
 
 // Đảm bảo modal được gắn vào root app
 Modal.setAppElement('#root');
@@ -60,14 +60,14 @@ const CourseUnitContent = () => {
                     <div className="ProfilePage-content">
                         <div className="ProfileRecentPage">
                             <div className="ProfileRecentFeed">
-                                <div className="p1vmf404">
-                                    <div data-overlay-container="true" className="dropdown-container">
+                                <div className="select-filter">
+                                    <div data-overlay-container="true" className="dropdown-container-course">
                                         <button
                                             type="button"
                                             aria-haspopup="true"
                                             aria-expanded={isDropdownOpen}
                                             aria-label="Lọc học phần"
-                                            className="AssemblyButtonBase AssemblySecondaryButton AssemblyButtonBase--medium AssemblyButtonBase--padding"
+                                            className="select-filter-button"
                                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                         >
                                             <span>{selectedFilter}</span>
@@ -84,11 +84,11 @@ const CourseUnitContent = () => {
                                         </button>
 
                                         {isDropdownOpen && (
-                                            <div className="dropdown-menu">
+                                            <div className="dropdown-menu-course">
                                                 {filters.map((filter) => (
                                                     <button
                                                         key={filter.id}
-                                                        className="dropdown-item"
+                                                        className="dropdown-item-course"
                                                         onClick={() => handleFilterSelect(filter)}
                                                     >
                                                         {filter.label}
@@ -115,17 +115,17 @@ const CourseUnitContent = () => {
                                             alt="Không tìm thấy học phần nào trong thư viện"
                                             src="https://assets.quizlet.com/_next/static/media/sets_empty.e06b562c.svg"
                                         />
-                                        <div className="title" style={{ color: 'white' }}>
+                                        <div className="title" style={{ color: 'white', fontSize: '24px' }}>
                                             Bạn chưa có học phần nào
                                         </div>
-                                        <div className="description">
+                                        <div className="description" style={{ color: 'white' }}>
                                             Các học phần bạn tạo hoặc học sẽ hiển thị ở đây.
                                         </div>
                                         <div className="button-container">
                                             <button
                                                 type="button"
                                                 aria-label="Tạo học phần"
-                                                className="AssemblyButtonBase"
+                                                className="create-course-button"
                                                 onClick={handleCreateClick}
                                             >
                                                 <span>Tạo học phần</span>

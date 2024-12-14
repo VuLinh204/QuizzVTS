@@ -1,6 +1,9 @@
 import React from 'react';
-import ClassroomContent from '../Classroom/ClassroomContent';
-import CourseUnitContent from '../CourseUnitLib/CourseUnitContent';
+import ClassroomContent from '../Classroom/content/ClassroomContent';
+import CourseUnitContent from '../CourseUnitLib/content/CourseUnitContent';
+import PracticeTestContent from '../PracticeTest/content/PracticeTestContent';
+import ExpertContent from '../ExpertSolution/content/ExpertContent';
+import FolderContent from '../Folder/content/FolderContent';
 
 const MainContent = ({ activeTab }) => {
   const renderContent = () => {
@@ -10,11 +13,11 @@ const MainContent = ({ activeTab }) => {
       case 'SETS':
         return <CourseUnitContent />;
       case 'PRACTICE_TESTS':
-        return <div style={{color: 'white'}}>Nội dung Bài kiểm tra thử</div>;
+        return <PracticeTestContent />;
       case 'EXPLANATIONS':
-        return <div style={{color: 'white'}}>Nội dung Lời giải chuyên gia</div>;
+        return <ExpertContent />;
       case 'FOLDERS':
-        return <div style={{color: 'white'}}>Nội dung Thư mục</div>;
+        return <FolderContent />;
       default:
         return null;
     }

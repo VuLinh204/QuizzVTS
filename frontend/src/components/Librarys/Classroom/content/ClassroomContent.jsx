@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import CreateClassForm from './CreateClassForm';
 import ClassPreview from './ClassPreview';
+import '../css/ClassContent.css';
 
 // Đảm bảo modal được gắn vào root app
 Modal.setAppElement('#root');
@@ -58,10 +59,10 @@ const ClassroomContent = () => {
                       alt="Không tìm thấy lớp học nào trong thư viện"
                       src="https://assets.quizlet.com/_next/static/media/classes_empty.7bc6c171.svg"
                     />
-                    <div className="title" style={{color: 'white'}}>
+                    <div className="title" style={{color: 'white', fontSize: '24px'}}>
                       Bạn chưa tạo hoặc tham gia lớp học nào
                     </div>
-                    <div className="description">
+                    <div className="description" style={{color: 'white'}}>
                       Tạo một lớp học để giúp bạn sắp xếp học phần của mình và
                       chia sẻ chúng với học sinh
                     </div>
@@ -69,7 +70,7 @@ const ClassroomContent = () => {
                       <button
                         type="button"
                         aria-label="Tạo lớp học"
-                        className="AssemblyButtonBase"
+                        className="create-class-button"
                         onClick={() => setIsModalOpen(true)}
                       >
                         <span>Tạo lớp học</span>

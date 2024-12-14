@@ -1,0 +1,126 @@
+.folder-preview {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: box-shadow 0.2s ease;
+}
+
+.folder-preview:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.folder-icon {
+    color: #3b4c9b;
+    margin-right: 16px;
+}
+
+.folder-icon-svg {
+    width: 32px;
+    height: 32px;
+}
+
+.folder-info {
+    flex: 1;
+}
+
+.folder-name {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #303545;
+}
+
+.folder-stats {
+    font-size: 12px;
+    color: #586380;
+}
+
+.folder-actions {
+    margin-left: 16px;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #586380;
+    border-radius: 50%;
+}
+
+.action-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.more-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.DashboardListItem {
+    margin-bottom: 16px;
+}
+
+.FolderPreviewLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.AssemblyCard {
+    background: white;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.AssemblyMediumCard {
+    padding: 16px;
+}
+
+.AssemblyCard:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.folder-preview-container {
+    position: relative;
+}
+
+.FolderPreview {
+    display: flex;
+    flex-direction: column;
+}
+
+.FolderPreview-cardByLineWrapper {
+    margin-bottom: 8px;
+}
+
+.UIDelimiter {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.delimiter-line {
+    display: block;
+    height: 100%;
+}
+
+.folder-preview-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.AssemblyIcon--medium {
+    width: 24px;
+    height: 24px;
+    color: #3b4c9b;
+}
+
+.FolderPreview-cardHeaderTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+} 
