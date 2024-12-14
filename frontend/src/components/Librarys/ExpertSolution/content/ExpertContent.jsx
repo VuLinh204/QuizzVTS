@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/ExpertContent.css';
 
 const ExpertContent = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate('/explanations');
+  };
+
   return (
     <div className="DashboardPage-primaryContents">
       <div className="DashboardPage-main">
@@ -17,6 +24,7 @@ const ExpertContent = () => {
               </div>
               <button 
                 type="button"
+                onClick={handleLearnMore}
                 aria-label="Tìm hiểu thêm" 
                 className="solution-button"
               >
