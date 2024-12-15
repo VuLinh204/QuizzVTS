@@ -1,0 +1,159 @@
+/* CourseInput.css */
+
+.input-format-container {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: calc(100% - 100px);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-format-container h4 {
+    font-size: 24px;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.input-format-container p {
+    font-size: 16px;
+    color: var(--white-color);
+}
+
+.input-textarea {
+    background-color: #2e3856;
+    color: var(--white-color);
+    display: block;
+    height: 12.5rem;
+    margin-top: 0.5rem;
+    outline: none;
+    padding: 1rem;
+    padding-left: 30px;
+    transition: all 0.12s;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+    line-height: 1.5;
+}
+
+.input-textarea::placeholder {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.separator-options {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.separator-group {
+    width: 48%;
+}
+
+.separator-group h5 {
+    font-size: 18px;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.separator-group label {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    line-height: 30px;
+    font-size: 16px;
+    color: var(--white-color);
+}
+
+.separator-group label p {
+    margin-left: 10px;
+}
+
+.custom-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    background-color: #2e3856;
+    color: var(--white-color);
+    margin-left: 10px;
+}
+
+.preview-section {
+    margin: 20px 0;
+}
+
+.preview-section h6 {
+    font-size: 18px;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.preview-item span {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.preview-item input {
+    width: calc(50% - 20px);
+    padding: 8px;
+    font-size: 14px;
+    background-color: #2e3856;
+    color: var(--white-color);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.cancel-button,
+.submit-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--white-color);
+}
+
+.cancel-button {
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 2px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    opacity: 0.8;
+}
+
+.submit-button {
+    background-color: var(--secondary-color);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}

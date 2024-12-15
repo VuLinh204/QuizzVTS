@@ -1,0 +1,66 @@
+[
+  {
+    "ContainingType": "SmartCards.Controllers.AccountController",
+    "Method": "Signin",
+    "RelativePath": "api/account/signin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "signinDTO",
+        "Type": "SmartCards.DTOs.Account.SigninDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.AccountController",
+    "Method": "Signup",
+    "RelativePath": "api/account/signup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "signupDTO",
+        "Type": "SmartCards.DTOs.Account.SignupDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.AccountController",
+    "Method": "SignupFacebook",
+    "RelativePath": "api/account/signup-facebook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.AccountController",
+    "Method": "SignupGoogle",
+    "RelativePath": "api/account/signup-goolge",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
