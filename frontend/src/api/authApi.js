@@ -1,14 +1,30 @@
 import axiosClient from './axiosClient';
 
 const authApi = {
-    login: (data) => {
-        return axiosClient.post(`/auth/login`, data);
+    login: async (data) => {
+        try {
+            const EmailOrUsername = data.email ? data.email : data.username;
+            const response = await axiosClient.post('login', {
+                password: data.password,
+                EmailOrUsername,
+            });
+            return response.data;
+        } catch (err) {
+            throw data;
+        }
     },
-    getUser: (data) => {
-        return axiosClient.get(`/auth/user`, data);
-    },
-    logout: () => {
-        return axiosClient.post(`/auth/logout`);
+
+    register: async (data) => {
+        try {
+            const response = await axiosClient.post('register', {
+                email: data.email,
+                username: data.username,
+                password: data.password,
+            });
+            return response.data;
+        } catch (err) {
+            throw err;
+        }
     },
 };
 

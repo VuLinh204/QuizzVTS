@@ -1,34 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AuthForm from '../../../components/AuthForm';
+import authApi from '../../../api/authApi';
 
 const LoginPage = () => {
-    const handleLogin = (event) => {
-        event.preventDefault();
-        console.log('Đăng nhập thành công!');
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleLogin = async (e) => {
+        // e.preventDefault();
+        setLoading(true);
+        setError('');
+
+        try {
+            const response = await authApi.login(formData);
+            console.log('Đăng nhập thành công', response);
+            window.location.href = '/';
+        } catch (err) {
+            setLoading(false);
+            setError('Đăng nhập thất bại. Vui lòng thử lại');
+            console.error('Lỗi đăng nhập', err);
+        }
     };
 
-    const fields = [
-        { type: 'text', placeholder: 'Email', name: 'email', required: true },
-        { type: 'password', placeholder: 'Mật khẩu', name: 'password', required: true },
-    ];
-
-    const controls = [
-        {
-            label: 'Đăng nhập',
-            className: 'btn btn--primary',
-            type: 'submit',
-            onClick: handleLogin,
-        },
-    ];
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
 
     return (
         <AuthForm
             heading="Đăng nhập"
-            fields={fields}
-            controls={controls}
             isLogin={true}
+            formData={formData}
             onSubmit={handleLogin}
             onSwitchMode={() => (window.location.href = '/register')}
+            error={error}
+            loading={loading}
+            onChange={handleChange}
         />
     );
 };

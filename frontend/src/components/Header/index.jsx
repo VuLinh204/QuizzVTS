@@ -84,7 +84,7 @@ export default function Header() {
                             onClick={closeMenuWhenLinkOpened}
                             className={({ isActive }) => (isActive ? 'active-link' : '')}
                         >
-                            Login
+                            Đăng nhập
                         </NavLink>
                         <span>|</span>
                         <NavLink
@@ -92,7 +92,7 @@ export default function Header() {
                             onClick={closeMenuWhenLinkOpened}
                             className={({ isActive }) => (isActive ? 'active-link' : '')}
                         >
-                            Register
+                            Đăng kí
                         </NavLink>
                     </li>
                 </ul>
