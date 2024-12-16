@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartCards")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffb7b544438764c05a48cdf1e6633aee5b9be008")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f46f3777246d3ad219c3f74bba7307b281941d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartCards")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartCards")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

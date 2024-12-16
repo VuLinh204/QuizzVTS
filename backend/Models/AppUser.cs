@@ -10,5 +10,7 @@ namespace SmartCards.Models;
 public class AppUser : IdentityUser
 {
     public string AvatarFileName { get; set; } = string.Empty;
+    public List<Deck> Decks { get; set; } = new List<Deck>();
+    public List<Folder> Folders { get; set; } = new List<Folder>();
 }
 
