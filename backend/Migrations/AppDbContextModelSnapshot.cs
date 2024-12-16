@@ -51,13 +51,13 @@ namespace SmartCards.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8321f1e3-70ed-4583-9b4c-8cd26babf6e0",
+                            Id = "814502b4-397f-4da8-8a43-9d8335e5edd6",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "4d4c62d4-dc25-4f01-b2a2-43e981cdd153",
+                            Id = "cede7ac3-0131-4122-94d7-771aa323bcca",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -264,15 +264,13 @@ namespace SmartCards.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Decks");
                 });
@@ -405,81 +403,81 @@ namespace SmartCards.Migrations
                         {
                             Id = 1,
                             Code = "en",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8758),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2121),
                             Name = "English",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8758)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2122)
                         },
                         new
                         {
                             Id = 2,
                             Code = "fr",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8760),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2124),
                             Name = "French",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8761)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2124)
                         },
                         new
                         {
                             Id = 3,
                             Code = "de",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8762),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2126),
                             Name = "German",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8763)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2126)
                         },
                         new
                         {
                             Id = 4,
                             Code = "es",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8764),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2128),
                             Name = "Spanish",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8765)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2128)
                         },
                         new
                         {
                             Id = 5,
                             Code = "it",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8766),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2130),
                             Name = "Italian",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8767)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2130)
                         },
                         new
                         {
                             Id = 6,
                             Code = "pt",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8833),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2132),
                             Name = "Portuguese",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8834)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2132)
                         },
                         new
                         {
                             Id = 7,
                             Code = "zh",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8837),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2134),
                             Name = "Chinese",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8837)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2135)
                         },
                         new
                         {
                             Id = 8,
                             Code = "ja",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8838),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2136),
                             Name = "Japanese",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8839)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2137)
                         },
                         new
                         {
                             Id = 9,
                             Code = "ru",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8840),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2138),
                             Name = "Russian",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8841)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2139)
                         },
                         new
                         {
                             Id = 10,
                             Code = "ar",
-                            CreatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8842),
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2140),
                             Name = "Arabic",
-                            UpdatedAt = new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8842)
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2141)
                         });
                 });
 
@@ -538,7 +536,9 @@ namespace SmartCards.Migrations
                 {
                     b.HasOne("SmartCards.Models.AppUser", "User")
                         .WithMany("Decks")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

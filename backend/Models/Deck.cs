@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartCards.Models
 {
@@ -11,7 +12,7 @@ namespace SmartCards.Models
         public bool IsPublic { get; set; } = false;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; } = string.Empty;
         public AppUser? User { get; set; }
         public List<Flashcard> Flashcards { get; set; } = new List<Flashcard>();
         public List<FolderDeck> FolderDecks { get; set; } = new List<FolderDeck>();

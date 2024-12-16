@@ -34,17 +34,17 @@ namespace SmartCards.Migrations
                     IsPublic = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    UserId1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Decks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Decks_Users_UserId1",
-                        column: x => x.UserId1,
+                        name: "FK_Decks_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,16 +154,16 @@ namespace SmartCards.Migrations
                 columns: new[] { "Id", "Code", "CreatedAt", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "en", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8758), "English", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8758) },
-                    { 2, "fr", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8760), "French", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8761) },
-                    { 3, "de", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8762), "German", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8763) },
-                    { 4, "es", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8764), "Spanish", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8765) },
-                    { 5, "it", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8766), "Italian", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8767) },
-                    { 6, "pt", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8833), "Portuguese", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8834) },
-                    { 7, "zh", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8837), "Chinese", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8837) },
-                    { 8, "ja", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8838), "Japanese", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8839) },
-                    { 9, "ru", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8840), "Russian", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8841) },
-                    { 10, "ar", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8842), "Arabic", new DateTime(2024, 12, 16, 12, 43, 8, 657, DateTimeKind.Local).AddTicks(8842) }
+                    { 1, "en", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2121), "English", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2122) },
+                    { 2, "fr", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2124), "French", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2124) },
+                    { 3, "de", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2126), "German", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2126) },
+                    { 4, "es", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2128), "Spanish", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2128) },
+                    { 5, "it", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2130), "Italian", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2130) },
+                    { 6, "pt", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2132), "Portuguese", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2132) },
+                    { 7, "zh", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2134), "Chinese", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2135) },
+                    { 8, "ja", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2136), "Japanese", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2137) },
+                    { 9, "ru", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2138), "Russian", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2139) },
+                    { 10, "ar", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2140), "Arabic", new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2141) }
                 });
 
             migrationBuilder.InsertData(
@@ -171,14 +171,14 @@ namespace SmartCards.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "4d4c62d4-dc25-4f01-b2a2-43e981cdd153", null, "User", "USER" },
-                    { "8321f1e3-70ed-4583-9b4c-8cd26babf6e0", null, "Admin", "ADMIN" }
+                    { "814502b4-397f-4da8-8a43-9d8335e5edd6", null, "Admin", "ADMIN" },
+                    { "cede7ac3-0131-4122-94d7-771aa323bcca", null, "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Decks_UserId1",
+                name: "IX_Decks_UserId",
                 table: "Decks",
-                column: "UserId1");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Flashcards_DeckId",
@@ -227,12 +227,12 @@ namespace SmartCards.Migrations
             migrationBuilder.DeleteData(
                 table: "Roles",
                 keyColumn: "Id",
-                keyValue: "4d4c62d4-dc25-4f01-b2a2-43e981cdd153");
+                keyValue: "814502b4-397f-4da8-8a43-9d8335e5edd6");
 
             migrationBuilder.DeleteData(
                 table: "Roles",
                 keyColumn: "Id",
-                keyValue: "8321f1e3-70ed-4583-9b4c-8cd26babf6e0");
+                keyValue: "cede7ac3-0131-4122-94d7-771aa323bcca");
 
             migrationBuilder.InsertData(
                 table: "Roles",

@@ -62,5 +62,41 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.DeckController",
+    "Method": "GetAll",
+    "RelativePath": "api/deck",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedAt",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsDecending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsPublic",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

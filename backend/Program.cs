@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using SmartCards.Data;
 using SmartCards.Interfaces;
 using SmartCards.Models;
+using SmartCards.Repositories;
 using SmartCards.Services;
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +19,6 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 //builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -68,13 +69,22 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme =
-    options.DefaultChallengeScheme =
-    options.DefaultForbidScheme =
-    options.DefaultScheme =
-    options.DefaultSignInScheme =
-    options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddGoogle(options =>
+{
+    var gconfig = builder.Configuration.GetSection("Authentication:Google");
+    options.ClientId = gconfig["GoogleOAuthClientId"]!;
+    options.ClientSecret = gconfig["GoogleOAuthClientSec"]!;
+})
+.AddFacebook(options =>
+{
+    var fconfig = builder.Configuration.GetSection("Authentication:Facebook");
+    options.AppId = fconfig["AppId"]!;
+    options.AppSecret = fconfig["AppSec"]!;
+})
+.AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -88,22 +98,11 @@ builder.Services.AddAuthentication(options =>
         )
     };
 });
+builder.Services.AddAuthorization();
 
+// Đăng ký service cho interfaces
 builder.Services.AddScoped<ITokenService, TokenService>();
-
-builder.Services.AddAuthentication()
-        .AddGoogle(options =>
-        {
-            var gconfig = builder.Configuration.GetSection("Authentication:Google");
-            options.ClientId = gconfig["GoogleOAuthClientId"]!;
-            options.ClientSecret = gconfig["GoogleOAuthClientSec"]!;
-        })
-        .AddFacebook(options =>
-        {
-            var fconfig = builder.Configuration.GetSection("Authentication:Facebook");
-            options.AppId = fconfig["AppId"]!;
-            options.AppSecret = fconfig["AppSec"]!;
-        });
+builder.Services.AddScoped<IDeckRepository, DeckRepository>();
 
 var app = builder.Build();
 
@@ -115,6 +114,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(x => x
+     .AllowAnyMethod()
+     .AllowAnyHeader()
+     .AllowCredentials()
+     .SetIsOriginAllowed(origin => true));
 
 app.UseRouting();
 
