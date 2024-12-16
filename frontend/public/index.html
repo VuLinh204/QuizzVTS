@@ -1,50 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+            name="description"
+            content="Create and play quizzes with ease. Challenge your knowledge and have fun on a quest for learning."
+        />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon-192x192.png" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <title>Quizzvts - Create & Play Quizzes</title>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description"
-        content="Create and play quizzes with ease. Challenge your knowledge and have fun on a quest for learning." />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon-192x192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Quizzvts - Create & Play Quizzes</title>
-</head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <!-- SVG practice-tests -->
+        <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="brand-practice-tests" viewBox="0 0 24 24">
+                <!-- Nền hình chữ nhật màu cam -->
+                <rect x="4" y="4" width="16" height="20" rx="2" fill="#FF8A3D" />
 
-<body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!-- SVG practice-tests -->
-    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-        <symbol id="brand-practice-tests" viewBox="0 0 24 24">
-            <!-- Nền hình chữ nhật màu cam -->
-            <rect x="4" y="4" width="16" height="20" rx="2" fill="#FF8A3D" />
+                <!-- Các dấu check -->
+                <path
+                    d="M6 9.5l0.8 0.8 2-2"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+                <path
+                    d="M6 13.5l0.8 0.8 2-2"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
 
-            <!-- Các dấu check -->
-            <path d="M6 9.5l0.8 0.8 2-2" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M6 13.5l0.8 0.8 2-2" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                <!-- Các thanh ngang -->
+                <rect x="12" y="8" width="6" height="1.5" rx="1" fill="white" />
+                <rect x="12" y="12" width="6" height="1.5" rx="1" fill="white" />
 
-            <!-- Các thanh ngang -->
-            <rect x="12" y="8" width="6" height="1.5" rx="1" fill="white" />
-            <rect x="12" y="12" width="6" height="1.5" rx="1" fill="white" />
+                <!-- Khung trắng -->
+                <rect x="5" y="17" width="5.5" height="4" rx="1" fill="white" />
+                <!-- Ngôi sao -->
+                <path d="M16 16l1.2 2.4 2.4 1.2-2.4 1.2-1.2 2.4-1.2-2.4-2.4-1.2 2.4-1.2 1.2-2.4z" fill="#585DF6" />
+            </symbol>
+        </svg>
 
-            <!-- Khung trắng -->
-            <rect x="5" y="17" width="5.5" height="4" rx="1" fill="white" />
-            <!-- Ngôi sao -->
-            <path d="M16 16l1.2 2.4 2.4 1.2-2.4 1.2-1.2 2.4-1.2-2.4-2.4-1.2 2.4-1.2 1.2-2.4z" fill="#585DF6" />
-        </symbol>
-    </svg>
+        <!-- SVG folder -->
+        <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="folder" viewBox="0 0 24 24">
+                <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+            </symbol>
+        </svg>
 
-    <!-- SVG folder -->
-    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-        <symbol id="folder" viewBox="0 0 24 24">
-            <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-        </symbol>
-    </svg>
+        <!-- FB -->
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
-    <div id="root"></div>
-</body>
-
+        <div id="root"></div>
+    </body>
 </html>

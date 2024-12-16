@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import useFBSDK from './UseFBSDK';
 import './AuthForm.css';
 
 const AuthForm = ({ isLogin, formData, onSubmit, onSwitchMode, onChange }) => {
+    const { fbUserInfo, fbStatus, handleLogin } = useFBSDK();
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if (!isLogin && !formData.termsAccepted) {
@@ -32,10 +34,16 @@ const AuthForm = ({ isLogin, formData, onSubmit, onSwitchMode, onChange }) => {
                         <i className="fa-brands fa-google"></i>
                         Đăng nhập bằng Google
                     </a>
-                    <a href="#" className="auth-form__social-btn auth-form__social-btn--facebook">
+                    <button
+                        href="#"
+                        className="auth-form__social-btn auth-form__social-btn--facebook"
+                        onClick={handleLogin}
+                    >
                         <i className="fa-brands fa-facebook"></i>
                         Đăng nhập bằng Facebook
-                    </a>
+                    </button>
+                    {fbStatus === 'success' && <p>Chào mừng {fbUserInfo?.name} đến với hệ thống!</p>}
+                    {fbStatus === 'failed' && <p>Đăng nhập Facebook thất bại. Vui lòng thử lại.</p>}
                 </div>
 
                 <div className="auth-form__divider">
