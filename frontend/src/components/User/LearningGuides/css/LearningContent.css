@@ -1,0 +1,21 @@
+.icon-learning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.AssemblyIcon--xxxlarge {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 1.5rem;
+}
+
+.title-learning {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+    color: white;
+    max-width: 400px;
+}

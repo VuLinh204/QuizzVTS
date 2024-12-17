@@ -12,6 +12,7 @@ const Authors = () => {
             authorRole: null,
             lectures: 493,
             classes: 0,
+            link: 'course-detail/user/abc',
             verified: false,
         },
         {
@@ -20,6 +21,7 @@ const Authors = () => {
             authorRole: 'Giáo viên',
             lectures: 1134,
             classes: 4,
+            link: 'course-detail/user/abc',
             verified: false,
         },
         {
@@ -28,6 +30,7 @@ const Authors = () => {
             authorRole: null,
             lectures: 42,
             classes: 0,
+            link: 'course-detail/user/abc',
             verified: false,
         },
         {
@@ -36,6 +39,7 @@ const Authors = () => {
             authorRole: 'Trợ giảng',
             lectures: 100,
             classes: 2,
+            link: 'course-detail/user/abc',
             verified: true,
         },
     ];
@@ -45,13 +49,15 @@ const Authors = () => {
             <h1 className={styles.title}>Tác giả hàng đầu</h1>
             <div className={styles.authors}>
                 {authorsData.map((author, index) => (
-                    <Author
-                        key={index}
-                        authorImage={author.authorImage}
-                        authorName={author.authorName}
-                        lectures={author.lectures}
-                        classes={author.classes}
-                    />
+                    <Link to={author.link} key={index} className={styles.authorLink}>
+                        <Author
+                            key={index}
+                            authorImage={author.authorImage}
+                            authorName={author.authorName}
+                            lectures={author.lectures}
+                            classes={author.classes}
+                        />
+                    </Link>
                 ))}
             </div>
         </div>

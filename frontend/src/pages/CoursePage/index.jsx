@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../../components/Navigation';
 import VocabularyCard from '../../components/VocabularyCard';
-import StudentCards from '../../components/StudentCards';
+import StudentLearnedCards from '../../components/StudentLearnedCards';
 import SampleQuestion from '../../components/SampleQuestion';
 import WordList from '../../components/WordList';
 import './CoursePage.css';
@@ -18,7 +18,7 @@ const CoursePage = () => {
             </div>
             <Navigation />
             <VocabularyCard />
-            <StudentCards />
+            <StudentLearnedCards />
             <SampleQuestion />
             <WordList />
         </div>

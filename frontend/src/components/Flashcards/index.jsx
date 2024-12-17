@@ -27,7 +27,7 @@ const Flashcards = () => {
             authorName: 'MsOlsonMTA',
             authorImage: '/path/to/msolsonmta.png',
             buttonLabel: 'Giáo viên',
-            link: '/course-detail/27-amendments',
+            link: '/course-detail/27-Amendments',
         },
     ];
 

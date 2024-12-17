@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './StudentCards.module.css';
-import StudentCard from '../StudentCard';
+import styles from './StudentLearnedCards.module.css';
+import StudentLearnedCard from '../StudentLearnedCard';
 
-const StudentCards = () => {
-    const StudentCardsData = [
+const StudentLearnedCards = () => {
+    const StudentLearnedCardsData = [
         {
             title: 'SMARTER TGAT1_2024_VOCAB',
             subtitle: '896 thuật ngữ',
@@ -24,21 +24,21 @@ const StudentCards = () => {
             subtitle: '27 thuật ngữ',
             authorName: 'MsOlsonMTA',
             authorImage: '/path/to/msolsonmta.png',
-            link: '/course-detail/27-amendments',
+            link: '/course-detail/27-Amendments',
         },
     ];
 
     return (
         <div className="container">
             <h1 className={styles.title}>Học sinh cũng đã học</h1>
-            <div className={styles.studentCards}>
-                {StudentCardsData.map((studentCard, index) => (
-                    <Link to={studentCard.link} key={index} className={styles.studentCardLink}>
-                        <StudentCard
-                            title={studentCard.title}
-                            subtitle={studentCard.subtitle}
-                            authorName={studentCard.authorName}
-                            authorImage={studentCard.authorImage}
+            <div className={styles.studentLearnedCards}>
+                {StudentLearnedCardsData.map((studentLearnedCard, index) => (
+                    <Link to={studentLearnedCard.link} key={index} className={styles.studentLearnedCardLink}>
+                        <StudentLearnedCard
+                            title={studentLearnedCard.title}
+                            subtitle={studentLearnedCard.subtitle}
+                            authorName={studentLearnedCard.authorName}
+                            authorImage={studentLearnedCard.authorImage}
                         />
                     </Link>
                 ))}
@@ -47,4 +47,4 @@ const StudentCards = () => {
     );
 };
 
-export default StudentCards;
+export default StudentLearnedCards;

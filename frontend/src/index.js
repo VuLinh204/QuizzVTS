@@ -19,6 +19,7 @@ import CourseInput from './components/CourseInput';
 import CourseUnit from './components/CourseUnit';
 import Explanations from './components/Explanations';
 import Library from './components/Librarys';
+import UserNonInfo from './components/User/UserNonInfo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -46,11 +47,11 @@ root.render(
 
                     <Route path="library" element={<Library />} />
                     <Route path="course-detail/:courseId" element={<CoursePage />} />
-
-                </Route >
+                    <Route path="course-detail/user/:userId" element={<UserNonInfo />} />
+                </Route>
 
                 <Route path="*" element={<ErrorPage message="404 | Trang không tìm thấy" />} />
-            </Routes >
-        </BrowserRouter >
-    </StrictMode >,
+            </Routes>
+        </BrowserRouter>
+    </StrictMode>,
 );

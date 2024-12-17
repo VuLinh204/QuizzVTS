@@ -1,0 +1,121 @@
+.main-container {
+    place-items: unset;
+}
+
+.DashboardLayout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.DashboardLayout-main {
+  width: 100%;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+}
+
+.user-name h2 {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .DashboardLayout-container {
+    padding: 1rem;
+  }
+}
+
+.AssemblyTabs {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+  justify-content: flex-start;
+}
+
+.AssemblyTab {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: white;
+}
+
+.AssemblyTab a {
+  color: white;
+  text-decoration: none;
+}
+
+.AssemblyTab.selected {
+  border-bottom: 2px solid #3ccfcf;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.empty-state img {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+.empty-state .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state .description {
+  color: #586380;
+  margin-bottom: 1rem;
+}
+
+.AssemblyButtonBase {
+  background-color: #3ccfcf;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.DashboardPage-primaryContents {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs-container {
+  margin-top: 20px;
+}

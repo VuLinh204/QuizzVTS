@@ -1,8 +1,8 @@
 // Flashcard.js
 import React from 'react';
-import styles from './StudentCard.module.css';
+import styles from './StudentLearnedCard.module.css';
 
-const StudentCard = ({ title, subtitle, authorName, authorImage, buttonLabel }) => {
+const StudentLearnedCard = ({ title, subtitle, authorName, authorImage, buttonLabel }) => {
     return (
         <div className={styles.card}>
             <h2 className={styles.card_title}>{title}</h2>
@@ -16,4 +16,4 @@ const StudentCard = ({ title, subtitle, authorName, authorImage, buttonLabel }) 
     );
 };
 
-export default StudentCard;
+export default StudentLearnedCard;
