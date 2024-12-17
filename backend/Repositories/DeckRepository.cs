@@ -18,9 +18,11 @@ namespace SmartCards.Repositories
             _context = context;
         }
 
-        public Task<Deck> CreateAsync(Deck deckModel)
+        public async Task<Deck> CreateAsync(Deck deckModel)
         {
-            throw new NotImplementedException();
+            await _context.Decks.AddAsync(deckModel);
+            await _context.SaveChangesAsync();
+            return deckModel;
         }
 
         public Task<Deck?> DeleteAsync(int id)
@@ -45,9 +47,11 @@ namespace SmartCards.Repositories
             return await decks.ToListAsync();
         }
 
-        public Task<Deck> GetByIdAsync(int id)
+        public async Task<Deck> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            //var deck = await _context.Decks.Include(x => x.Flashcards).FirstOrDefaultAsync(x => x.Id == id);
+            //if (deck == null) return 
+            return await _context.Decks.Include(x => x.Flashcards).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public Task<Deck?> UpdateAsync(int id, UpdateDeckRequestDTO deckDTO)

@@ -1,4 +1,5 @@
-﻿using SmartCards.DTOs.Deck;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using SmartCards.DTOs.Deck;
 using SmartCards.Models;
 
 namespace SmartCards.Mappers
@@ -15,6 +16,19 @@ namespace SmartCards.Mappers
                 IsPublic = deckModel.IsPublic,
                 CreatedAt = deckModel.CreatedAt,
                 UpdatedAt = deckModel.UpdatedAt,
+                Flashcards = deckModel.Flashcards
+            };
+        }
+
+        public static Deck ToDeckFromCreateDTO(this CreateDeckRequestDTO deckDTO, string userId)
+        {
+            return new Deck
+            {
+                Title = deckDTO.Title,
+                Description = deckDTO.Description,
+                IsPublic = deckDTO.IsPublic,
+                CreatedAt = deckDTO.CreatedAt,
+                UserId = userId
             };
         }
     }

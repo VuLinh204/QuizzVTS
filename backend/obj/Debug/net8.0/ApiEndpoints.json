@@ -98,5 +98,37 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.DeckController",
+    "Method": "Create",
+    "RelativePath": "api/deck",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deckDTO",
+        "Type": "SmartCards.DTOs.Deck.CreateDeckRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.DeckController",
+    "Method": "GetById",
+    "RelativePath": "api/deck/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
