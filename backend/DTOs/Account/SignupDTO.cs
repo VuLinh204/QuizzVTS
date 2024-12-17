@@ -2,7 +2,7 @@
 
 namespace SmartCards.DTOs.Account
 {
-    public class RegisterDTO
+    public class SignupDTO
     {
         [Required]
         public string? Username { get; set; }

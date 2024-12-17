@@ -51,13 +51,13 @@ namespace SmartCards.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3a014aaf-ddb6-4720-8aea-b7e9a92db5f8",
+                            Id = "814502b4-397f-4da8-8a43-9d8335e5edd6",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "874fbdba-b2b8-4b16-80da-b6c6236c4686",
+                            Id = "cede7ac3-0131-4122-94d7-771aa323bcca",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -239,6 +239,248 @@ namespace SmartCards.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
+            modelBuilder.Entity("SmartCards.Models.Deck", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Decks");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Flashcard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DeckId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Definition")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Definition_LangId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageFileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsMark")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Term_LangId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeckId");
+
+                    b.HasIndex("Definition_LangId");
+
+                    b.HasIndex("Term_LangId");
+
+                    b.ToTable("Flashcards");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Folder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Folders");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.FolderDeck", b =>
+                {
+                    b.Property<int>("DeckId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FolderId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("DeckId", "FolderId");
+
+                    b.HasIndex("FolderId");
+
+                    b.ToTable("FolderDecks");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Code = "en",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2121),
+                            Name = "English",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2122)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Code = "fr",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2124),
+                            Name = "French",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2124)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Code = "de",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2126),
+                            Name = "German",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2126)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Code = "es",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2128),
+                            Name = "Spanish",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2128)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Code = "it",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2130),
+                            Name = "Italian",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2130)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Code = "pt",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2132),
+                            Name = "Portuguese",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2132)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Code = "zh",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2134),
+                            Name = "Chinese",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2135)
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Code = "ja",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2136),
+                            Name = "Japanese",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2137)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Code = "ru",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2138),
+                            Name = "Russian",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2139)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Code = "ar",
+                            CreatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2140),
+                            Name = "Arabic",
+                            UpdatedAt = new DateTime(2024, 12, 16, 15, 19, 29, 748, DateTimeKind.Local).AddTicks(2141)
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -288,6 +530,91 @@ namespace SmartCards.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Deck", b =>
+                {
+                    b.HasOne("SmartCards.Models.AppUser", "User")
+                        .WithMany("Decks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Flashcard", b =>
+                {
+                    b.HasOne("SmartCards.Models.Deck", "Deck")
+                        .WithMany("Flashcards")
+                        .HasForeignKey("DeckId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SmartCards.Models.Language", "Definition_Lang")
+                        .WithMany()
+                        .HasForeignKey("Definition_LangId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SmartCards.Models.Language", "Term_Lang")
+                        .WithMany()
+                        .HasForeignKey("Term_LangId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deck");
+
+                    b.Navigation("Definition_Lang");
+
+                    b.Navigation("Term_Lang");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Folder", b =>
+                {
+                    b.HasOne("SmartCards.Models.AppUser", "User")
+                        .WithMany("Folders")
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.FolderDeck", b =>
+                {
+                    b.HasOne("SmartCards.Models.Deck", "Deck")
+                        .WithMany("FolderDecks")
+                        .HasForeignKey("DeckId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SmartCards.Models.Folder", "Folder")
+                        .WithMany("FolderDecks")
+                        .HasForeignKey("FolderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deck");
+
+                    b.Navigation("Folder");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.AppUser", b =>
+                {
+                    b.Navigation("Decks");
+
+                    b.Navigation("Folders");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Deck", b =>
+                {
+                    b.Navigation("Flashcards");
+
+                    b.Navigation("FolderDecks");
+                });
+
+            modelBuilder.Entity("SmartCards.Models.Folder", b =>
+                {
+                    b.Navigation("FolderDecks");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\khach\\OneDrive\\Documents\\C#\\ASP.Net\\SmartCards\\SmartCards.csproj": {}
+    "E:\\QuizzVTS\\backend\\SmartCards.csproj": {}
   },
   "projects": {
-    "C:\\Users\\khach\\OneDrive\\Documents\\C#\\ASP.Net\\SmartCards\\SmartCards.csproj": {
+    "E:\\QuizzVTS\\backend\\SmartCards.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\khach\\OneDrive\\Documents\\C#\\ASP.Net\\SmartCards\\SmartCards.csproj",
+        "projectUniqueName": "E:\\QuizzVTS\\backend\\SmartCards.csproj",
         "projectName": "SmartCards",
-        "projectPath": "C:\\Users\\khach\\OneDrive\\Documents\\C#\\ASP.Net\\SmartCards\\SmartCards.csproj",
-        "packagesPath": "C:\\Users\\khach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\khach\\OneDrive\\Documents\\C#\\ASP.Net\\SmartCards\\obj\\",
+        "projectPath": "E:\\QuizzVTS\\backend\\SmartCards.csproj",
+        "packagesPath": "C:\\Users\\vungo\\.nuget\\packages\\",
+        "outputPath": "E:\\QuizzVTS\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\khach\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vungo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,6 +45,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Facebook": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.11, )"
@@ -112,7 +119,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

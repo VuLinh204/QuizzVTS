@@ -33,7 +33,7 @@ const FolderContent = () => {
         { id: 'created', label: 'Đã tạo' },
         { id: 'marked', label: 'Đã đánh dấu' },
         { id: 'recent', label: 'Gần đây' },
-        { id: 'studied', label: 'Đã học' }
+        { id: 'studied', label: 'Đã học' },
     ];
 
     const handleFilterSelect = (filter) => {
@@ -43,7 +43,7 @@ const FolderContent = () => {
 
     const modalStyles = {
         content: {
-            top: '38%',
+            top: 'calc(50% - 30px)',
             left: '50%',
             right: 'auto',
             bottom: 'auto',
@@ -54,11 +54,12 @@ const FolderContent = () => {
             borderRadius: '20px',
             width: '90%',
             maxWidth: '750px',
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
         },
         overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.5)'
-        }
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            left: '8%',
+        },
     };
 
     return (
@@ -118,9 +119,7 @@ const FolderContent = () => {
                                             alt="Không tìm thấy thư mục nào trong thư viện"
                                             src="https://assets.quizlet.com/_next/static/media/folders_empty.4ec6ab1f.svg"
                                         />
-                                        <div className="folder-title">
-                                            Bạn chưa tạo thư mục nào
-                                        </div>
+                                        <div className="folder-title">Bạn chưa tạo thư mục nào</div>
                                         <div className="folder-description">
                                             Tạo một thư mục để sắp xếp các học phần
                                         </div>

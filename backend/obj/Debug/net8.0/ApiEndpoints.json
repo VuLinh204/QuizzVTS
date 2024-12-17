@@ -1,15 +1,15 @@
 [
   {
     "ContainingType": "SmartCards.Controllers.AccountController",
-    "Method": "Login",
-    "RelativePath": "api/account/login",
+    "Method": "Signin",
+    "RelativePath": "api/account/signin",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "loginDTO",
-        "Type": "SmartCards.DTOs.Account.LoginDTO",
+        "Name": "signinDTO",
+        "Type": "SmartCards.DTOs.Account.SigninDTO",
         "IsRequired": true
       }
     ],
@@ -17,16 +17,84 @@
   },
   {
     "ContainingType": "SmartCards.Controllers.AccountController",
-    "Method": "Register",
-    "RelativePath": "api/account/register",
+    "Method": "Signup",
+    "RelativePath": "api/account/signup",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "registerDTO",
-        "Type": "SmartCards.DTOs.Account.RegisterDTO",
+        "Name": "signupDTO",
+        "Type": "SmartCards.DTOs.Account.SignupDTO",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.AccountController",
+    "Method": "SignupFacebook",
+    "RelativePath": "api/account/signup-facebook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.AccountController",
+    "Method": "SignupGoogle",
+    "RelativePath": "api/account/signup-goolge",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartCards.Controllers.DeckController",
+    "Method": "GetAll",
+    "RelativePath": "api/deck",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedAt",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsDecending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsPublic",
+        "Type": "System.Boolean",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

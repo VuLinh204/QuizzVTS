@@ -1,6 +1,6 @@
 .centered_boxes {
     display: flex;
-    justify-content: center;
+    margin-left: 40px;
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
@@ -23,12 +23,10 @@
         font-size: 3rem;
         color: rgb(255, 255, 255);
         font-weight: 900;
-        /* margin-top: .8rem; */
         text-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 1);
     }
 
     &:hover {
-        /* background-color: #996262; */
         transform: scale(1.05);
     }
     &:first-child {

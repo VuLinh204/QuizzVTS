@@ -3,98 +3,98 @@
 }
 
 .DashboardLayout-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1100px;
+    margin-left: 50px;
 }
 
 .DashboardLayout-main {
-  width: 100%;
+    width: 100%;
 }
 
 .header-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
 }
 
 .header-title h2 {
-  text-align: left;
-  width: 100%;
-  font-size: 1.4rem;
-  color: var(--text-color);
-  margin-bottom: 40px;
+    text-align: left;
+    width: 100%;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .DashboardLayout-container {
-    padding: 1rem;
-  }
+    .DashboardLayout-container {
+        padding: 1rem;
+    }
 }
 
 .AssemblyTabs {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  width: 100%;
-  margin-bottom: 40px;
-  justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+    justify-content: flex-start;
 }
 
 .AssemblyTab {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: white;
 }
 
 .AssemblyTab a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .AssemblyTab.selected {
-  border-bottom: 2px solid #3ccfcf;
+    border-bottom: 2px solid #3ccfcf;
 }
 
 .empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
 }
 
 .empty-state img {
-  max-width: 200px;
-  margin-bottom: 1rem;
+    max-width: 200px;
+    margin-bottom: 1rem;
 }
 
 .empty-state .title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 .empty-state .description {
-  color: #586380;
-  margin-bottom: 1rem;
+    color: #586380;
+    margin-bottom: 1rem;
 }
 
 .AssemblyButtonBase {
-  background-color: #3ccfcf;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
+    background-color: #3ccfcf;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .DashboardPage-primaryContents {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

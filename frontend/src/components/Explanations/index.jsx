@@ -1,60 +1,66 @@
-import classNames from "classnames/bind"
-import style from "./Explanations.module.css";
-import { useState } from "react";
-import AboutUs from "../AboutUs";
-import Button from "../Button";
-import FAQ from "../FAQ";
-import BookCard from "../BookCard";
+import classNames from 'classnames/bind';
+import style from './Explanations.module.css';
+import { useState } from 'react';
+import AboutUs from '../AboutUs';
+import Button from '../Button';
+import FAQ from '../FAQ';
+import BookCard from '../BookCard';
 const cx = classNames.bind(style);
 
 const topics = [
-    { id: 1, name: "Hóa học" },
-    { id: 2, name: "Vật lý" },
-    { id: 3, name: "Đại số tuyến tính" },
-    { id: 4, name: "Xác suất" },
-    { id: 5, name: "Khoa học xã hội" },
-    { id: 6, name: "Khoa học đời sống" },
+    { id: 1, name: 'Hóa học' },
+    { id: 2, name: 'Vật lý' },
+    { id: 3, name: 'Đại số tuyến tính' },
+    { id: 4, name: 'Xác suất' },
+    { id: 5, name: 'Khoa học xã hội' },
+    { id: 6, name: 'Khoa học đời sống' },
 ];
 function Explanations() {
-    const [activeTopic, setActiveTopic] = useState("Hóa học");
+    const [activeTopic, setActiveTopic] = useState('Hóa học');
 
     const handlTopicClick = (topic) => {
         setActiveTopic(topic);
-    }
+    };
     return (
-        <div className={cx("wrapper")}>
-            <section className={cx("hero")}>
-                <div className={cx("hero-content")}>
+        <div className={cx('wrapper')}>
+            <section className={cx('hero')}>
+                <div className={cx('hero-content')}>
                     <h1>Tìm lời giải sách giáo khoa đáng tin cậy</h1>
                     <ul>
                         <li>
-                            <span className={cx('icon')} style={{ color: "#18ae79" }}> <i class="fa-solid fa-book"></i></span>
+                            <span className={cx('icon')} style={{ color: '#18ae79' }}>
+                                {' '}
+                                <i className="fa-solid fa-book"></i>
+                            </span>
                             Giải thích từng bước
                         </li>
                         <li>
-                            <span className={cx('icon')} style={{ color: "#ff725b" }}><i class="fa-solid fa-pen"></i></span>
+                            <span className={cx('icon')} style={{ color: '#ff725b' }}>
+                                <i className="fa-solid fa-pen"></i>
+                            </span>
                             Được các chuyên gia biên soạn và xác minh
                         </li>
                         <li>
-                            <span className={cx('icon')} style={{ color: "#e372ff" }}><i class="fa-solid fa-receipt"></i></span>
+                            <span className={cx('icon')} style={{ color: '#e372ff' }}>
+                                <i className="fa-solid fa-receipt"></i>
+                            </span>
                             Hàng triệu lời giải cho các đầu sách giáo khoa phổ biến
                         </li>
                     </ul>
                     <div className={cx('hero-search')}>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
                         <input
                             type="text"
                             placeholder="Tìm kiếm sách giáo khoa, ISBN, câu hỏi"
-                            className={cx("input-search")}
+                            className={cx('input-search')}
                         />
                     </div>
                 </div>
-
             </section>
             <div>
-                <section className={cx("topics-section")}>
+                <section className={cx('topics-section')}>
                     <h2 className={cx('toppic-title')}>Duyệt theo chủ đề</h2>
-                    <div className={cx("topics-list")}>
+                    <div className={cx('topics-list')}>
                         {topics.map((item, index) => {
                             return (
                                 <h3
@@ -64,11 +70,10 @@ function Explanations() {
                                 >
                                     {item.name}
                                 </h3>
-                            )
+                            );
                         })}
-
                     </div>
-                    <div className={cx("topic-card")}>
+                    <div className={cx('topic-card')}>
                         <BookCard
                             img="https://d2nchlq0f2u6vy.cloudfront.net/cache/f0/5b/f05b21063194c1b8a8c430c213bdce16.jpg"
                             title="Chemistry: The Central Science"
@@ -87,7 +92,7 @@ function Explanations() {
                         />
                     </div>
                 </section>
-                <div style={{ backgroundColor: "#2e3856" }}>
+                <div style={{ backgroundColor: '#2e3856' }}>
                     <section className={cx('container')}>
                         <div className={cx('content')}>
                             <AboutUs
@@ -111,76 +116,71 @@ function Explanations() {
 
                         <div className={cx('content')}>
                             <h2 className={cx('content-title')}>Khám phá sách giáo khoa theo chủ đề</h2>
-                            <div className={cx("content-btn")}>
-                                <Button
-                                    icon={<i class="fa-solid fa-file-pen"></i>}
-                                    colorIcon="#f6406c"
-                                    to="/"
-                                >
+                            <div className={cx('content-btn')}>
+                                <Button icon={<i className="fa-solid fa-file-pen"></i>} colorIcon="#f6406c" to="/">
                                     Nghệ thuật và nhân văn
                                 </Button>
-                                <Button
-                                    icon={<i class="fa-solid fa-language"></i>}
-                                    colorIcon="#a533ff"
-                                    to="/"
-                                >
+                                <Button icon={<i className="fa-solid fa-language"></i>} colorIcon="#a533ff" to="/">
                                     Ngôn ngữ
                                 </Button>
                                 <Button
-                                    icon={<i class="fa-solid fa-square-root-variable"></i>}
+                                    icon={<i className="fa-solid fa-square-root-variable"></i>}
                                     colorIcon="#ff983a"
                                     to="/"
                                 >
                                     Toán học
                                 </Button>
-                                <Button
-                                    icon={<i class="fa-solid fa-flask"></i>}
-                                    colorIcon="#4255ff"
-                                    to="/"
-                                >
+                                <Button icon={<i className="fa-solid fa-flask"></i>} colorIcon="#4255ff" to="/">
                                     Khoa học
                                 </Button>
-                                <Button
-                                    icon={<i class="fa-solid fa-flask"></i>}
-                                    colorIcon="#4255ff"
-                                    to="/"
-                                >
+                                <Button icon={<i className="fa-solid fa-flask"></i>} colorIcon="#4255ff" to="/">
                                     Khoa học xã hội
                                 </Button>
-                                <Button
-                                    icon={<i class="fa-solid fa-image"></i>}
-                                    colorIcon="#4ebdeb"
-                                    to="/"
-                                >
+                                <Button icon={<i className="fa-solid fa-image"></i>} colorIcon="#4ebdeb" to="/">
                                     Khác
                                 </Button>
                             </div>
                         </div>
 
                         <div className={cx('feedback')}>
-                            <h2 className={cx("feedback-title")}>
-                                <img alt="" src="https://assets.quizlet.com/_next/static/media/TikTokIcon.85c08241.svg" />
+                            <h2 className={cx('feedback-title')}>
+                                <img
+                                    alt=""
+                                    src="https://assets.quizlet.com/_next/static/media/TikTokIcon.85c08241.svg"
+                                />
                                 Các học sinh nói về Quizlet
                             </h2>
                             <div className={cx('card-feedback')}>
                                 <div className={cx('card-feedback-item')}>
                                     Tôi đã đạt 9,5 điểm trong phần bài kiểm tra Sinh học cuối kỳ của mình nhờ Quizlet 💙
                                     <div className={cx('author')}>
-                                        <img className={cx('avatar')} alt="" src="https://assets.quizlet.com/_next/static/media/testimonials_alliecat1987.a1b1e470.png" />
+                                        <img
+                                            className={cx('avatar')}
+                                            alt=""
+                                            src="https://assets.quizlet.com/_next/static/media/testimonials_alliecat1987.a1b1e470.png"
+                                        />
                                         <h3 className={cx('name')}>Alliecat1987</h3>
                                     </div>
                                 </div>
                                 <div className={cx('card-feedback-item')}>
                                     Tôi đã đạt 9,5 điểm trong phần bài kiểm tra Sinh học cuối kỳ của mình nhờ Quizlet 💙
                                     <div className={cx('author')}>
-                                        <img className={cx('avatar')} alt="" src="https://assets.quizlet.com/_next/static/media/testimonials_alliecat1987.a1b1e470.png" />
+                                        <img
+                                            className={cx('avatar')}
+                                            alt=""
+                                            src="https://assets.quizlet.com/_next/static/media/testimonials_alliecat1987.a1b1e470.png"
+                                        />
                                         <h3 className={cx('name')}>Alliecat1987</h3>
                                     </div>
                                 </div>
                                 <div className={cx('card-feedback-item')}>
                                     Tôi đã đạt 9,5 điểm trong phần bài kiểm tra Sinh học cuối kỳ của mình nhờ Quizlet 💙
                                     <div className={cx('author')}>
-                                        <img className={cx('avatar')} alt="" src="https://assets.quizlet.com/_next/static/media/testimonials_alliecat1987.a1b1e470.png" />
+                                        <img
+                                            className={cx('avatar')}
+                                            alt=""
+                                            src="https://assets.quizlet.com/_next/static/media/testimonials_alliecat1987.a1b1e470.png"
+                                        />
                                         <h3 className={cx('name')}>Alliecat1987</h3>
                                     </div>
                                 </div>
@@ -190,10 +190,9 @@ function Explanations() {
                         <FAQ />
                     </section>
                 </div>
-
             </div>
-        </div >
-    )
+        </div>
+    );
 }
 
 export default Explanations;
